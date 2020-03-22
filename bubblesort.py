@@ -3,12 +3,20 @@ def bubble_sort(items, comp=lambda x, y: x > y):
     items = items[:]
     for i in range(len(items) - 1):
         swapped = False
+        # for j in range(len(items) - 1, i, -1):
+        #     if comp(items[j - 1], items[j]):
+        #         items[j], items[j - 1] = items[j - 1], items[j]
+        #         swapped = True
         for j in range(i, len(items) - 1 - i):
             if comp(items[j], items[j + 1]):
                 items[j], items[j + 1] = items[j + 1], items[j]
                 swapped = True
+        #     print(items)
+        # print(items)
+        # print("----------- inner for end ------------")
         if not swapped:
             break
+        
     return items
 
 def bubble_sort_plus(items, comp=lambda x, y: x > y):
@@ -33,7 +41,7 @@ def bubble_sort_plus(items, comp=lambda x, y: x > y):
 def main():
     item=[5,9,1,3,4,7,6,8,2]
     print(item)
-    item = bubble_sort_plus(item)
+    item = bubble_sort(item)
     print(item)
 
 
