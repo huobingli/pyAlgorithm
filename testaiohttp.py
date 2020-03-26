@@ -1,3 +1,8 @@
+"""
+之前命名的文件名位 aiohttp.py 与系统模块冲突，
+导致执行失败报错 "AttributeError: module 'aiohttp' has no attribute 'ClientSession'"
+"""
+
 import asyncio
 import re
 
