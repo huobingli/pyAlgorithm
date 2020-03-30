@@ -2,9 +2,6 @@
 Thumbs.db
 db.json
 *.log
-node_modules/
-public/
-.deploy*/
-*.exe
-*.png
+*.bak
 *.html
+*.pyc
