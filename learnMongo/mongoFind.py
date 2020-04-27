@@ -9,16 +9,6 @@ def main():
     db = client.test
     collection = db.students
 
-    # 根据正则匹配式
-    results = collection.find({'name': {'$regex': '^D.*'}})
-
-    # 输出
-    print(results)
-    for result in results:
-        print(result)
-    
-    return
-
     # type(result) 为字典 result 中多了一个'_id'项，是mongo插入过程中自动添加的
     result = collection.find_one({'name': 'Jordan'})
     print(type(result))
@@ -29,7 +19,7 @@ def main():
     print(result)
 
     # 查找年龄为20的
-    # results = collection.find({'age': 20})
+    results = collection.find({'age': 20})
 
     # 根据符号条件查找
     # $lt 小于
@@ -39,7 +29,7 @@ def main():
     # $ne 不等于
     # $in 范围里
     # $nin 不再范围里
-    # results = collection.find({'age': {'$gt': 20}})
+    results = collection.find({'age': {'$gt': 20}})
 
     # 根据正则匹配式
     results = collection.find({'name': {'$regex': '^J.*'}})
